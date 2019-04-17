@@ -1,8 +1,11 @@
 apply plugin: 'com.jfrog.bintray'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'org.jetbrains.dokka-android'
+
 version = libraryVersion
+//important, if null, will issue: Maven group, artifact or version not match ...
 group = publishedGroupId
+
 if (project.hasProperty("kotlin")) { //Kotlin libraries
     task sourcesJar(type: Jar) {
         classifier = 'sources'
@@ -33,13 +36,13 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
     classifier = 'javadoc'
     from javadoc.destinationDir
 }
+
+//解决kotlin javadoc.options抱错
 dokka {
     outputFormat = 'html'
     outputDirectory = "$buildDir/javadoc"
 }
-//tasks.withType(Javadoc).all {
-//    enabled = false
-//}
+
 tasks.withType(Javadoc) {
     options.addStringOption('Xdoclint:none', '-quiet')
     options.addStringOption('encoding', 'UTF-8')
