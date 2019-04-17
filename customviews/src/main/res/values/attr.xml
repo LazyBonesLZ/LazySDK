@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomView">
+        <attr name="layoutId" format="reference"/>
+    </declare-styleable>
+    <declare-styleable name="MainButton">
+        <attr name="mainBtnBgColor" format="color|reference"/>
+        <attr name="mainBtnIcon" format="reference"/>
+        <attr name="mainBtnIconRate" format="float|reference"/>
+        <attr name="mainBtnTextSpaceIcon" format="dimension|reference"/>
+        <attr name="mainBtnText" format="string|reference"/>
+        <attr name="mainBtnTextSize" format="dimension|reference"/>
+        <attr name="mainBtnTextColor" format="color|reference"/>
+        <attr name="mainBtnTextPadding" format="dimension|reference"/>
+        <attr name="mainBtnTextAlign">
+            <enum name="left_bottom" value="0"/>
+            <enum name="bottom" value="1"/>
+            <enum name="right_bottom" value="2"/>
+            <enum name="center" value="3"/>
+        </attr>
+        <attr name="mainBtnRadius" format="dimension|reference"/>
+    </declare-styleable>
+</resources>
