@@ -3,9 +3,9 @@
 buildscript {
     ext.kotlin_version = '1.3.21'
     repositories {
-        maven{
-            url 'https://dl.bintray.com/lazyboneslz/LazySDK/'
-        }
+//        maven{
+//            url 'https://dl.bintray.com/lazyboneslz/LazySDK/'
+//        }
         google()
         jcenter()
 
@@ -24,9 +24,9 @@ buildscript {
 
 allprojects {
     repositories {
-        maven{
-            url 'https://dl.bintray.com/lazyboneslz/LazySDK/'
-        }
+//        maven{
+//            url 'https://dl.bintray.com/lazyboneslz/LazySDK/'
+//        }
         google()
         jcenter()
 

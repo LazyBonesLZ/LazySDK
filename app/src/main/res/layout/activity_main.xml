@@ -112,7 +112,7 @@
                 app:mainBtnBgColor="#FFDE6D"
                 app:mainBtnIconRate="4.0"
                 app:mainBtnRadius="10dp"
-                app:mainBtnText="矩形"
+                app:mainBtnText="点击更新名称"
                 app:mainBtnTextSize="25sp"
                 app:mainBtnTextColor="@android:color/holo_red_dark"
                 app:mainBtnTextAlign="center"
