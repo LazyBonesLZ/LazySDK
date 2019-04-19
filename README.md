@@ -1,5 +1,6 @@
 # LazySDK
 ## Customviews
+[![](https://img.shields.io/badge/download-0.0.1-blue.svg)](https://bintray.com/lazyboneslz/LazySDK/customviews/_latestVersion)
 ### ManiButton
 自定义button，可以在xml中设置点击效果，但是如果每个button都要按下效果的话，重复添加xml文件烦不胜烦，所以自定义一个MainButton,设置好Button的颜色后，按下效果是对其背景色加深处理，达到点击的效果，感觉世界一下清爽了许多。
 ###效果预览
