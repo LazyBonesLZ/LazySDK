@@ -200,30 +200,7 @@ class MainButton : View {
         val bounds = getIconBounds(icon!!)
         icon?.setBounds(bounds.left, bounds.top, bounds.right, bounds.bottom)
         icon?.draw(canvas)
-//        val left: Int
-//        val top: Int
-//        var iconWidth = icon?.intrinsicWidth
-//        var iconHeight = icon?.intrinsicHeight
-//
-//        var mRadius = if (width >= height) height / 4.0f else width / 4.0f
-//
-//        if (iconWidth!! > iconHeight!!) {
-//            iconWidth = (mRadius * Math.sqrt(2.0)).toInt()
-//            iconHeight = iconWidth * icon?.intrinsicHeight!! / icon?.intrinsicWidth!!
-//        } else {
-//            iconHeight = (mRadius * Math.sqrt(2.0)).toInt()
-//            iconWidth = iconHeight * icon?.intrinsicWidth!! / icon?.intrinsicHeight!!
-//        }
-//
-//        left = (width - iconWidth) / 2
-//        top = (height - iconHeight) / 2
-//        icon?.setBounds(left, top, left + iconWidth, top + iconHeight)
-//        icon?.draw(canvas)
 
-//        left = (width - iconRate.toInt()) / 2
-//        top = (height - iconRate.toInt()) / 2
-//        icon?.setBounds(left, top, left + iconRate.toInt(), top + iconRate.toInt())
-//        icon?.draw(canvas)
     }
 
 //    override fun onTouchEvent(event: MotionEvent?): Boolean {
