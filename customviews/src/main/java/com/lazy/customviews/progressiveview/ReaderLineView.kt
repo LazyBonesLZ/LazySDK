@@ -31,7 +31,8 @@ class ReaderLineView(context: Context?) : LinearLayout(context) {
         baseLienLp.gravity = Gravity.BOTTOM
         baseLienLp.bottomMargin = 5
         addView(baseLine, baseLienLp)
-        minimumHeight = 100
+
+        orientation = VERTICAL
     }
 
     fun setContent(text: String?) {

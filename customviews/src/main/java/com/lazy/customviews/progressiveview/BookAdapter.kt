@@ -16,7 +16,7 @@ class BookAdapter : RecyclerView.Adapter<BookAdapter.ViewHolder>() {
     }
 
     override fun getItemCount(): Int {
-        return 10
+        return 20
     }
 
     override fun onBindViewHolder(holder: BookAdapter.ViewHolder, position: Int) {
@@ -24,8 +24,8 @@ class BookAdapter : RecyclerView.Adapter<BookAdapter.ViewHolder>() {
             val line = list[position]
             if (line != null) {
                 holder.readerLineView.lineNumber = line.line
-                holder.readerLineView.textContent = line.text
-                holder.readerLineView.textColor = line.textColor
+                holder.readerLineView.setContent(line.text)
+                holder.readerLineView.setContentColor(line.textColor)
             }
         }
     }

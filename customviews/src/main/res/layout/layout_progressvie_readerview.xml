@@ -11,28 +11,29 @@
                   android:paddingLeft="10dp"
                   android:paddingRight="10dp"
                   android:gravity="center"
-    android:background="@android:color/darker_gray">
+                  android:background="@android:color/darker_gray">
         <TextView android:layout_width="match_parent"
                   android:layout_height="wrap_content"
                   android:id="@+id/articleTitle"
                   tools:text="回想一下"/>
     </LinearLayout>
+    <Space android:layout_width="match_parent" android:layout_height="0dp"
+    android:layout_weight="0.1"/>
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-android:layout_weight="9"
-            android:layout_marginTop="10dp"
-            android:padding="10dp"
+            android:layout_weight="9"
+            android:id="@+id/articleContentArea"
             android:background="@android:color/darker_gray">
         <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/articleContent"
-                />
+        android:background="@android:color/white"/>
         <TextView android:layout_width="match_parent"
                   android:layout_height="50dp"
                   android:id="@+id/articleStatus"
-               app:layout_constraintLeft_toLeftOf="parent"
+                  app:layout_constraintLeft_toLeftOf="parent"
                   app:layout_constraintRight_toRightOf="parent"
                   app:layout_constraintTop_toTopOf="parent"
                   app:layout_constraintBottom_toBottomOf="parent"
@@ -40,7 +41,7 @@ android:layout_weight="9"
                   tools:textColor="@android:color/white"
                   tools:text="回想一下"
                   android:visibility="gone"
-        android:text="sdfjsldjflsdjfljsdlfjlksdjflksdj"/>
+                  android:text="sdfjsldjflsdjfljsdlfjlksdjflksdj"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

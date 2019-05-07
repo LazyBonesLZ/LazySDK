@@ -3,11 +3,13 @@ package com.lazy.customviews.progressiveview
 import android.content.Context
 import android.os.Build
 import android.util.AttributeSet
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewTreeObserver
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.lazy.customviews.R
@@ -18,6 +20,8 @@ class ProgressiveReaderView : LinearLayout {
     private var mPageAdapter: BookAdapter? = null
     private var articleTitle:TextView? = null
     private var articleContent:RecyclerView? = null
+    private var articleContentArea:ConstraintLayout? = null
+    private var articleStatus:TextView? = null
 
     constructor(context: Context?, attrs: AttributeSet?)
             : super(context, attrs) {
@@ -41,30 +45,43 @@ class ProgressiveReaderView : LinearLayout {
         val root = LayoutInflater.from(context).inflate(R.layout.layout_progressvie_readerview,null,false)
         articleContent = root.articleContent
         articleTitle = root.articleTitle
+        articleContentArea = root.articleContentArea
+        articleStatus = root.articleStatus
 
-        root.articleStatus.visibility = View.VISIBLE
+        articleStatus?.visibility = View.VISIBLE
         addView(root,LinearLayout.LayoutParams(-1,-1))
 
-        relayout()
+        contentAreaRelayout()
 
 
     }
 
-    private fun relayout() {
-        this.viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
+    private fun contentAreaRelayout() {
+        articleContent?.viewTreeObserver?.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
             override fun onGlobalLayout() {
                 if (Build.VERSION.SDK_INT >= 16) {
-                    viewTreeObserver.removeOnGlobalLayoutListener(this)
+                    articleContent?.viewTreeObserver?.removeOnGlobalLayoutListener(this)
                 } else {
-                    viewTreeObserver.removeGlobalOnLayoutListener(this)
+                    articleContent?.viewTreeObserver?.removeGlobalOnLayoutListener(this)
                 }
 
                 mPageAdapter = BookAdapter()
                 articleContent?.adapter = mPageAdapter
                 articleContent?.layoutManager = LinearLayoutManager(context)
 
-                val itemH = height / 20
+
+
+                val itemH = articleContent?.height!! / mPageAdapter?.itemCount!!
                 mPageAdapter?.setItemHeight(itemH)
+                Log.e("tag","${articleContent?.height},$itemH")
+
+                val list = ArrayList<Line>()
+                for (i in 0 .. 10){
+                    val line = Line()
+                    line.text = "This is line: ${i + 1}"
+                    list.add(line)
+                }
+                mPageAdapter?.updateDataSource(list)
 
             }
 
