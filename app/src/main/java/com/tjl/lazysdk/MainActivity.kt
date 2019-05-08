@@ -36,13 +36,14 @@ class MainActivity : AppCompatActivity() {
 //            val tmpTitle = btnRoundRectWithoutIcon.getTitle()
 //            showToast(tmpTitle)
 //        }
-        var list :ArrayList<Line> = ArrayList(10)
-        list.add(Line())
-        list.add(Line())
-        list.add(Line())
 
-//        articleContent.adapter = BookAdapter(list)
-//        articleContent.layoutManager = LinearLayoutManager(this)
+        resume.setOnClickListener {
+            reader.onResume()
+        }
+
+        pause.setOnClickListener {
+            reader.onPause()
+        }
 
     }
 

@@ -131,13 +131,26 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
-    <com.lazy.customviews.progressiveview.ProgressiveReaderView
-            android:layout_width="800dp"
-            android:layout_height="1000dp"
+    <com.lazy.customviews.progressiveview.view.ProgressiveReaderView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/reader"
     />
+    <Button android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:id="@+id/resume"
+    android:text="开始"/>
+    <Button android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintRight_toRightOf="parent"
+            android:id="@+id/pause"
+            android:text="暂停"/>
     <!--<androidx.recyclerview.widget.RecyclerView-->
             <!--android:layout_width="match_parent"-->
             <!--android:layout_height="match_parent"-->
