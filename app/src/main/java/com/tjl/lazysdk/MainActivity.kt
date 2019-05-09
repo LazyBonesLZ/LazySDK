@@ -45,6 +45,10 @@ class MainActivity : AppCompatActivity() {
             reader.onPause()
         }
 
+        restart.setOnClickListener {
+            reader.restart()
+        }
+
     }
 
     fun showToast(msg:String){

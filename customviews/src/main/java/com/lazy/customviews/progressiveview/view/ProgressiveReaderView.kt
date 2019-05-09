@@ -28,21 +28,22 @@ class ProgressiveReaderView : LinearLayout {
     private var mPageAdapter: BookAdapter? = null
     private var articleTitle: TextView? = null
     private var articleContent: RecyclerView? = null
-    private var articleContentArea: ConstraintLayout? = null
     private var articleStatus: TextView? = null
     private var articleProgressBar: ReadProgressBar? = null
-    private var mThread: Thread? = null
+
     private var mThreadRunning = true
     private var mState = STATE_UNKNOWN
 
-    var mSpeed = 1000 // 1000 chars per min
+    var mSpeed = 5000 // 1000 chars per min
     var mTotalTime = 0 // ms
     private var mCurLineReadTime = 0L //ms
     private var mCurPage = 0
     private var mCurLine = 0
+    private var mProgress = 0
     private var mTimer: Timer? = null
 
     private var mPagesMap = HashMap<Int, ArrayList<Line>>()
+
 
 
     constructor(context: Context?, attrs: AttributeSet?)
@@ -95,45 +96,10 @@ class ProgressiveReaderView : LinearLayout {
 
     }
 
-    private fun checkMoveToNextLine(): Boolean {
-        return if (mCurLineReadTime < getCurrentLineReadTime(mCurLine, mSpeed)) {
-            mCurLineReadTime += FRAME_RATE
-            false
-        } else {
-//            mCurLineReadTime = getCurrentLineReadTime(mCurLine, mSpeed)
-            mCurLine++
-            true
-        }
-    }
-
     private fun initIndexs() {
         mCurLine = 0
         mCurPage = 0
         mProgress = 0
-    }
-
-    private fun initThread() {
-        if (mThread == null) {
-            mThread = Thread(Runnable {
-                while (mThreadRunning) {
-                    when (mState) {
-                        STATE_READING -> {
-                            if (checkMoveToNextLine())
-                                mHandler.sendEmptyMessage(MSG_REDAER_PROGRESS)
-                        }
-                        STATE_READ_PAUSE -> {
-
-                        }
-                        STATE_READ_COMPLETE -> {
-
-                        }
-                    }
-
-                    Thread.sleep(FRAME_RATE * 1L)
-                }
-            })
-            mThread?.start()
-        }
     }
 
     private fun contentAreaRelayout() {
@@ -164,15 +130,16 @@ class ProgressiveReaderView : LinearLayout {
 
     private fun initTestData(): HashMap<Int, ArrayList<Line>> {
         var map = HashMap<Int, ArrayList<Line>>()
-        for (i in 0 until 5) {
+        for (i in 0 until 3) {
             var lines = 20
             val list = ArrayList<Line>()
-            if (i == 4) {
+            if (i == 2) {
                 lines = 10
             }
             for (j in 0 until lines) {
                 val line = Line()
-                line.text = "文件和目录已经被提交到仓库，page:${i + 1},line: ${j + 1}"
+//                line.text = "文件和目录已经被提交到仓库，page:${i + 1},line: ${j + 1}"
+                line.text = "page:${i + 1},line: ${j + 1}"
                 list.add(line)
             }
             map[i] = list
@@ -205,7 +172,8 @@ class ProgressiveReaderView : LinearLayout {
     }
 
     fun onDestory() {
-        mThreadRunning = false
+        mPagesMap?.clear()
+        cancelTimer()
     }
 
     private fun cancelTimer() {
@@ -245,7 +213,6 @@ class ProgressiveReaderView : LinearLayout {
 
 
     // 创建一个Handler
-    var mProgress = 0
     private val mHandler: Handler = object : Handler(Looper.getMainLooper()) {
         override fun handleMessage(msg: Message?) {
             super.handleMessage(msg)
@@ -284,7 +251,7 @@ class ProgressiveReaderView : LinearLayout {
         const val STATE_READ_PAUSE = 101
         const val STATE_READ_COMPLETE = 102
 
-        const val FRAME_RATE = 170
+        const val FRAME_RATE = 17
 
 
     }

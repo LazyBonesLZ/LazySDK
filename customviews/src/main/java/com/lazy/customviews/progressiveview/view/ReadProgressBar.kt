@@ -3,12 +3,17 @@ package com.lazy.customviews.progressiveview.view
 
 import android.content.Context
 import android.graphics.Color
+import android.graphics.drawable.ClipDrawable
 import android.os.Parcel
 import android.os.Parcelable
 import android.util.AttributeSet
+import android.util.Log
+import android.view.Gravity
 import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
+import androidx.core.content.res.ResourcesCompat
+import com.lazy.customviews.R
 
 /**
  * Created by John on 2014/10/15.
@@ -29,6 +34,8 @@ class ReadProgressBar(context: Context, attrs: AttributeSet) : LinearLayout(cont
     private val DEFAULT_ABOVE_WAVE_COLOR = Color.WHITE
     private val DEFAULT_BLOW_WAVE_COLOR = Color.WHITE
     private val DEFAULT_PROGRESS = 80
+
+    private var mBackGroundDrawable:ClipDrawable? = null
 
     init {
         orientation = LinearLayout.VERTICAL
@@ -55,8 +62,15 @@ class ReadProgressBar(context: Context, attrs: AttributeSet) : LinearLayout(cont
         //        addView(mMask);
         //        addView(mSolid);
         mMask = ImageView(context)
-        mMask?.setBackgroundColor(Color.DKGRAY)
-        addView(mMask,LinearLayout.LayoutParams(-1,-1))
+//        mMask?.setBackgroundColor(Color.DKGRAY)
+//        mMask?.setBackgroundResource( R.mipmap.progress_bg)
+        val drawable = ResourcesCompat.getDrawable(resources, R.mipmap.progress_bg,null)
+        mBackGroundDrawable = ClipDrawable(drawable,Gravity.TOP,ClipDrawable.VERTICAL)
+        mMask?.background = mBackGroundDrawable
+//        mMask?.setImageResource(android.R.color.transparent)
+
+        addView(mMask,LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+            LinearLayout.LayoutParams.MATCH_PARENT))
         alpha = 0.8f
 
         setProgress(mProgress)
@@ -75,12 +89,29 @@ class ReadProgressBar(context: Context, attrs: AttributeSet) : LinearLayout(cont
     }
 
     private fun computeMaskToBottom() {
-        mMaskToBottom = (height * (1f - mProgress / 1000f)).toInt()
-        val params = mMask!!.layoutParams
-        if (params != null) {
-            (params as LinearLayout.LayoutParams).bottomMargin = mMaskToBottom
-        }
-        mMask!!.layoutParams = params
+        val rate = (1f - mProgress / 1000f)
+
+//        mMask!!.postInvalidate()
+
+//        mMaskToBottom = (height * rate).toInt()
+//        val params = mMask!!.layoutParams
+//        if (params != null) {
+//            (params as LinearLayout.LayoutParams).bottomMargin = mMaskToBottom
+//        }
+//        mMask!!.layoutParams = params
+
+
+        //裁剪背景图
+        val level =  (10000 * (1f - rate)).toInt()
+
+        Log.e("tag","rate = ${(1f - rate) * 100}%,level = $level")
+//        mBackGroundDrawable?.level = level
+//        mMask?.background = mBackGroundDrawable
+
+        mMask?.background?.level = level
+        mMask?.background?.invalidateSelf()
+
+
     }
 
     public override fun onSaveInstanceState(): Parcelable? {
