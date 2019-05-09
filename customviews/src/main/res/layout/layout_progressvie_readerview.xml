@@ -44,7 +44,7 @@
                   android:id="@+id/articleStatus"
                   android:layout_gravity="center"
                   android:gravity="center"
-                  tools:textColor="@android:color/white"
+                  tools:textColor="@android:color/holo_blue_light"
                   tools:text="回想一下"
                   android:visibility="gone"
                   android:background="@android:color/holo_red_dark"

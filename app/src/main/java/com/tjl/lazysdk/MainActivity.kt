@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.lazy.customviews.progressiveview.BookAdapter
+import com.lazy.customviews.progressiveview.ProgressiveReadListener
 import com.lazy.customviews.progressiveview.model.Line
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -37,6 +38,24 @@ class MainActivity : AppCompatActivity() {
 //            showToast(tmpTitle)
 //        }
 
+        reader.setReadListener(object : ProgressiveReadListener {
+            override fun onReadCompleted() {
+
+            }
+
+            override fun onChangePage(page: Int) {
+
+            }
+
+            override fun onReadPause() {
+                reader.showStatusText("暂停中。。。。")
+            }
+
+            override fun onReadError(error: String) {
+            }
+
+        })
+
         resume.setOnClickListener {
             reader.onResume()
         }
@@ -51,8 +70,8 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun showToast(msg:String){
-        Toast.makeText(this ,msg, Toast.LENGTH_SHORT).show()
+    fun showToast(msg: String) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
     }
 
 }

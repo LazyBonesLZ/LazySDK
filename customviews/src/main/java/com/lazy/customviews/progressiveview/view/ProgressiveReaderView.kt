@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.lazy.customviews.R
 import com.lazy.customviews.progressiveview.BookAdapter
+import com.lazy.customviews.progressiveview.ProgressiveReadListener
 import com.lazy.customviews.progressiveview.model.Line
 import kotlinx.android.synthetic.main.layout_progressvie_readerview.view.*
 import java.util.*
@@ -34,8 +35,8 @@ class ProgressiveReaderView : LinearLayout {
     private var mThreadRunning = true
     private var mState = STATE_UNKNOWN
 
-    var mSpeed = 5000 // 1000 chars per min
-    var mTotalTime = 0 // ms
+    private var mSpeed = 5000 // 1000 chars per min
+    private var mTotalTime = 0 // ms
     private var mCurLineReadTime = 0L //ms
     private var mCurPage = 0
     private var mCurLine = 0
@@ -43,6 +44,10 @@ class ProgressiveReaderView : LinearLayout {
     private var mTimer: Timer? = null
 
     private var mPagesMap = HashMap<Int, ArrayList<Line>>()
+
+    private var mPageLineCount = 10 //每页显示的行数
+
+    private var mReadListener:ProgressiveReadListener? = null
 
 
 
@@ -54,6 +59,32 @@ class ProgressiveReaderView : LinearLayout {
 
     fun setArticleTitle(title: String?) {
         articleTitle?.text = title ?: ""
+    }
+
+    fun setSpeed(speed: Int){
+        mSpeed = speed
+    }
+
+    fun setReadListener(listener: ProgressiveReadListener?){
+        this.mReadListener = listener
+    }
+
+    fun showStatusText(text:String){
+        this.articleStatus?.text = text
+        mHandler.sendEmptyMessage(MSG_CLEAN)
+
+    }
+
+    fun cleanPageText(){
+//        mState = STATE_UNKNOWN
+//        cancelTimer()
+
+        articleProgressBar?.visibility = View.GONE
+        articleStatus?.visibility = View.VISIBLE
+        mPageAdapter?.clean()
+//        articleContent?.adapter = BookAdapter(mPageLineCount)
+
+
     }
 
     fun parseArticle(page: Int, filePath: String) {
@@ -111,7 +142,7 @@ class ProgressiveReaderView : LinearLayout {
                     articleContent?.viewTreeObserver?.removeGlobalOnLayoutListener(this)
                 }
 
-                mPageAdapter = BookAdapter()
+                mPageAdapter = BookAdapter(mPageLineCount)
                 articleContent?.adapter = mPageAdapter
                 articleContent?.layoutManager = LinearLayoutManager(context)
 
@@ -131,10 +162,10 @@ class ProgressiveReaderView : LinearLayout {
     private fun initTestData(): HashMap<Int, ArrayList<Line>> {
         var map = HashMap<Int, ArrayList<Line>>()
         for (i in 0 until 3) {
-            var lines = 20
+            var lines = mPageLineCount
             val list = ArrayList<Line>()
             if (i == 2) {
-                lines = 10
+                lines = mPageLineCount / 2
             }
             for (j in 0 until lines) {
                 val line = Line()
@@ -152,6 +183,7 @@ class ProgressiveReaderView : LinearLayout {
             return
         mState = STATE_READ_PAUSE
         cancelTimer()
+        mReadListener?.onReadPause()
 
     }
 
@@ -159,6 +191,7 @@ class ProgressiveReaderView : LinearLayout {
         if (mState == STATE_READING)
             return
         mState = STATE_READING
+        mPageAdapter?.updateDataSource(mPagesMap[mCurPage]!!)
         updateMask()
 
     }
@@ -179,12 +212,15 @@ class ProgressiveReaderView : LinearLayout {
     private fun cancelTimer() {
         if (mTimer != null) {
             mTimer?.cancel()
+            mTimer?.purge()
             mTimer = null
         }
         mCurLineReadTime = 0
     }
 
     private fun updateMask() {
+        articleProgressBar?.visibility = View.VISIBLE
+        articleStatus?.visibility = View.GONE
 
         if (mState != STATE_READING)
             return
@@ -208,6 +244,7 @@ class ProgressiveReaderView : LinearLayout {
             //文章结束？
             cancelTimer()
             mState = STATE_READ_COMPLETE
+            mReadListener?.onReadCompleted()
         }
     }
 
@@ -233,9 +270,15 @@ class ProgressiveReaderView : LinearLayout {
                         mCurLine = 0
                         mPageAdapter?.updateDataSource(mPagesMap[mCurPage]!!)
 
+                        mReadListener?.onChangePage(mCurPage)
+
                     }
 
                     updateMask()
+                }
+
+                MSG_CLEAN->{
+                    cleanPageText()
                 }
 
             }
@@ -245,6 +288,7 @@ class ProgressiveReaderView : LinearLayout {
 
     companion object {
         const val MSG_REDAER_PROGRESS = 1
+        const val MSG_CLEAN = 2
 
         const val STATE_UNKNOWN = -1
         const val STATE_READING = 100
