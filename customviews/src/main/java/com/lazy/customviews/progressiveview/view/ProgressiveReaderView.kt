@@ -12,21 +12,19 @@ import android.view.View
 import android.view.ViewTreeObserver
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.lazy.customviews.R
-import com.lazy.customviews.progressiveview.BookAdapter
+import com.lazy.customviews.progressiveview.ProgressiveReadAdapter
 import com.lazy.customviews.progressiveview.ProgressiveReadListener
 import com.lazy.customviews.progressiveview.model.Line
 import kotlinx.android.synthetic.main.layout_progressvie_readerview.view.*
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
-import kotlin.concurrent.schedule
 
 class ProgressiveReaderView : LinearLayout {
-    private var mPageAdapter: BookAdapter? = null
+    private var mPageAdapter: ProgressiveReadAdapter? = null
     private var articleTitle: TextView? = null
     private var articleContent: RecyclerView? = null
     private var articleStatus: TextView? = null
@@ -82,7 +80,7 @@ class ProgressiveReaderView : LinearLayout {
         articleProgressBar?.visibility = View.GONE
         articleStatus?.visibility = View.VISIBLE
         mPageAdapter?.clean()
-//        articleContent?.adapter = BookAdapter(mPageLineCount)
+//        articleContent?.adapter = ProgressiveReadAdapter(mPageLineCount)
 
 
     }
@@ -142,7 +140,7 @@ class ProgressiveReaderView : LinearLayout {
                     articleContent?.viewTreeObserver?.removeGlobalOnLayoutListener(this)
                 }
 
-                mPageAdapter = BookAdapter(mPageLineCount)
+                mPageAdapter = ProgressiveReadAdapter(mPageLineCount)
                 articleContent?.adapter = mPageAdapter
                 articleContent?.layoutManager = LinearLayoutManager(context)
 

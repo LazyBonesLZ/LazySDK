@@ -6,14 +6,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.lazy.customviews.progressiveview.model.Line
 import com.lazy.customviews.progressiveview.view.ReaderLineView
 
-class BookAdapter : RecyclerView.Adapter<BookAdapter.ViewHolder> {
+class ProgressiveReadAdapter : RecyclerView.Adapter<ProgressiveReadAdapter.ViewHolder> {
     var list: ArrayList<Line?> = ArrayList(10)
     private var itemHeight = -1
     private var lineCount = 10
     constructor(lineCount:Int){
         this.lineCount = lineCount
     }
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProgressiveReadAdapter.ViewHolder {
         val rootView = ReaderLineView(parent.context)
         if (itemHeight != -1)
             rootView.layoutParams?.height = itemHeight
@@ -38,7 +38,7 @@ class BookAdapter : RecyclerView.Adapter<BookAdapter.ViewHolder> {
         return this.lineCount
     }
 
-    override fun onBindViewHolder(holder: BookAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ProgressiveReadAdapter.ViewHolder, position: Int) {
         if (position <= list.size - 1) {
             val line = list[position]
             Log.e("tag","onBindViewHolder:${line?.text}")

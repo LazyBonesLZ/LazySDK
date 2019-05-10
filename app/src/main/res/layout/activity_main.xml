@@ -7,13 +7,10 @@
         android:layout_height="match_parent">
 
     <LinearLayout
-
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            tools:context=".MainActivity"
-            android:visibility="gone">
-
+            tools:context=".MainActivity">
         <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -130,37 +127,36 @@
                     android:layout_marginTop="10dp"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+        <View android:layout_width="match_parent"
+              android:layout_height="5dp"
+              android:background="@color/colorAccent"/>
+
+        <com.lazy.customviews.MainButton
+                android:id="@+id/goProgressiveReader"
+                android:layout_width="208dp"
+                android:layout_height="60dp"
+                app:mainBtnBgColor="#FFDE6D"
+                app:mainBtnRadius="10dp"
+                app:mainBtnText="逐行阅读"
+                app:mainBtnTextSize="18sp"
+                app:mainBtnTextColor="@android:color/holo_red_dark"
+                app:mainBtnTextAlign="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"/>
+
+        <com.lazy.customviews.MainButton
+                android:id="@+id/goBookFliper"
+                android:layout_width="208dp"
+                android:layout_height="60dp"
+                app:mainBtnBgColor="#FFDE6D"
+                app:mainBtnRadius="10dp"
+                app:mainBtnText="翻书效果"
+                app:mainBtnTextSize="18sp"
+                app:mainBtnTextColor="@android:color/holo_red_dark"
+                app:mainBtnTextAlign="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"/>
     </LinearLayout>
-    <com.lazy.customviews.progressiveview.view.ProgressiveReaderView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:id="@+id/reader"
-    />
-    <Button android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            android:id="@+id/resume"
-    android:text="开始"/>
-    <Button android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            android:id="@+id/restart"
-            android:text="重新开始"/>
-    <Button android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-         app:layout_constraintRight_toRightOf="parent"
-            android:id="@+id/pause"
-            android:text="暂停"/>
-    <!--<androidx.recyclerview.widget.RecyclerView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:id="@+id/articleContent"-->
-            <!--android:background="@android:color/darker_gray"/>-->
 </androidx.constraintlayout.widget.ConstraintLayout>
