@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.baidu.ocr.demo.OcrActivity
 import com.lazy.customviews.progressiveview.ProgressiveReadListener
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -42,6 +43,10 @@ class MainActivity : AppCompatActivity() {
 
         goBookFliper.setOnClickListener {
             startActivity(Intent(this,BookFilpActivity::class.java))
+        }
+
+        goOcrActivity.setOnClickListener {
+            startActivity(Intent(this,OcrActivity::class.java))
         }
 
     }

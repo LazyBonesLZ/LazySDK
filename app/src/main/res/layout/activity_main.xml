@@ -158,5 +158,18 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"/>
+        <com.lazy.customviews.MainButton
+                android:id="@+id/goOcrActivity"
+                android:layout_width="208dp"
+                android:layout_height="60dp"
+                app:mainBtnBgColor="#FFDE6D"
+                app:mainBtnRadius="10dp"
+                app:mainBtnText="证件扫描demo"
+                app:mainBtnTextSize="18sp"
+                app:mainBtnTextColor="@android:color/holo_red_dark"
+                app:mainBtnTextAlign="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

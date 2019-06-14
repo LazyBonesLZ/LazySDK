@@ -7,7 +7,8 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.tjl.lazysdk"
+//        applicationId "com.tjl.lazysdk"
+        applicationId "com.car.manage"
         minSdkVersion 16
         targetSdkVersion 28
         versionCode 1
@@ -26,6 +27,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':customviews')
+    implementation project(':ocr_ui')
 //    implementation 'com.lazy.sdk:customviews:0.0.1'
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
