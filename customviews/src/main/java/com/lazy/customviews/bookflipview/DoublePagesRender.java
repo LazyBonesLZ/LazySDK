@@ -280,6 +280,6 @@ public class DoublePagesRender extends PageRender {
     }
 
     private void drawTextLine(){
-         
+
     }
 }
