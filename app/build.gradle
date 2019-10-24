@@ -4,19 +4,35 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'com.huawei.agconnect'
+
 android {
     compileSdkVersion 28
     defaultConfig {
 //        applicationId "com.tjl.lazysdk"
         applicationId "com.car.manage"
-        minSdkVersion 16
+        minSdkVersion 17
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
+    signingConfigs {
+        config {
+            keyAlias 'key0'
+            keyPassword 'testtest'
+            storeFile file('test.jks')
+            storePassword 'testtest'
+        }
+    }
+
     buildTypes {
+        debug {
+            signingConfig signingConfigs.config
+        }
         release {
+            signingConfig signingConfigs.config
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -27,6 +43,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':customviews')
+    implementation project(':hms')
     implementation project(':ocr_ui')
 //    implementation 'com.lazy.sdk:customviews:0.0.1'
     implementation 'androidx.appcompat:appcompat:1.0.2'
@@ -35,3 +52,4 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
 }
+

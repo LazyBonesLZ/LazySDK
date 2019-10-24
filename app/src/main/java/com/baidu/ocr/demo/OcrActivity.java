@@ -3,6 +3,7 @@
  */
 package com.baidu.ocr.demo;
 
+import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -471,6 +472,7 @@ public class OcrActivity extends AppCompatActivity {
     }
 
     private void infoPopText(final String result) {
+        Log.i("OCR",result);
         alertText("", result);
     }
 

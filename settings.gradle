@@ -1,1 +1,5 @@
-include ':app', ':customviews','ocr_ui'
+include ':app'
+include ':hms'
+include ':customviews'
+include ':ocr_ui'
+

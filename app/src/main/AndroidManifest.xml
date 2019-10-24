@@ -1,34 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.tjl.lazysdk">
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.tjl.lazysdk">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-            android:allowBackup="true"
-            android:icon="@mipmap/ic_launcher"
-            android:label="@string/app_name"
-            android:roundIcon="@mipmap/ic_launcher_round"
-            android:supportsRtl="true"
-            android:theme="@style/AppTheme">
-        <activity android:name=".BookFilpActivity">
-        </activity>
-        <activity android:name=".ProgressiveReadActivity">
-        </activity>
-        <activity android:name=".MainActivity">
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <service
+            android:name=".service.MyHmsService"
+            android:exported="false">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="com.huawei.push.action.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+        <!--接入HMS Core Push SDK需要注册该Service-->
+        <service
+            android:name="com.huawei.hms.support.api.push.service.HmsMsgService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":pushservice">
+            <intent-filter>
+                <action android:name="com.huawei.push.msg.NOTIFY_MSG" />
+                <action android:name="com.huawei.push.msg.PASSBY_MSG" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".MenuActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.baidu.ocr.demo.IDCardActivity"
-                  android:label="@string/idCardLabel">
+        <activity android:name=".HMSLocationActivity" />
+        <activity android:name=".HMSActivity" />
+        <activity android:name=".BookFilpActivity" />
+        <activity android:name=".ProgressiveReadActivity" />
+        <activity android:name=".CustomButtonActivity">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
-        <activity android:name="com.baidu.ocr.demo.OcrActivity"
-                  android:label="@string/idCardLabel">
-        </activity>
+        <activity
+            android:name="com.baidu.ocr.demo.IDCardActivity"
+            android:label="@string/idCardLabel" />
+        <activity
+            android:name="com.baidu.ocr.demo.OcrActivity"
+            android:label="@string/idCardLabel" />
     </application>
 
 </manifest>

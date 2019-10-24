@@ -1,0 +1,11 @@
+{
+	"client":{
+		"cp_id":"890086000300079530",
+		"product_id":"9105385871708158902",
+		"client_id":"210546566040126656",
+		"client_secret":"49DE03111AB50FCC5A673F67443C9552AEEC6B6FB246C6F812CE08F8CB16A152",
+		"app_id":"101238653",
+		"package_name":"com.car.manage"
+	},
+	"configuration_version":"1.0"
+}

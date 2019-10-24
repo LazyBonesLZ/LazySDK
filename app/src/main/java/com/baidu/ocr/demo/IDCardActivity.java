@@ -5,6 +5,7 @@ package com.baidu.ocr.demo;
 
 import java.io.File;
 
+import android.util.Log;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -226,6 +227,7 @@ public class IDCardActivity extends AppCompatActivity {
         this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
+                Log.i("OCR",message);
                 alertDialog.setTitle(title)
                         .setMessage(message)
                         .setPositiveButton("确定", null)

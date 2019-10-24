@@ -1,18 +1,19 @@
 package com.tjl.lazysdk
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.baidu.ocr.demo.OcrActivity
-import com.lazy.customviews.progressiveview.ProgressiveReadListener
-import kotlinx.android.synthetic.main.activity_main.*
+import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_custombutton.*
 
-class MainActivity : AppCompatActivity() {
+
+class CustomButtonActivity : AppCompatActivity() {
+    companion object {
+        const val TAG: String = "CustomButtonActivity"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_custombutton)
         btnRoundRect.setOnClickListener {
             val title = btnRoundRect.getTitle()
             showToast(title)
@@ -37,22 +38,11 @@ class MainActivity : AppCompatActivity() {
             showToast(tmpTitle)
         }
 
-        goProgressiveReader.setOnClickListener {
-            startActivity(Intent(this,ProgressiveReadActivity::class.java))
-        }
-
-        goBookFliper.setOnClickListener {
-            startActivity(Intent(this,BookFilpActivity::class.java))
-        }
-
-        goOcrActivity.setOnClickListener {
-            startActivity(Intent(this,OcrActivity::class.java))
-        }
-
     }
 
     fun showToast(msg: String) {
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
     }
+
 
 }

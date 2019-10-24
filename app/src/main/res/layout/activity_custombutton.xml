@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            tools:context=".CustomButtonActivity">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="带图标的圆角矩形：\n文本左下角对齐"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.lazy.customviews.MainButton
+                    android:id="@+id/btnRoundRect"
+                    android:layout_width="108dp"
+                    android:layout_height="120dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintLeft_toRightOf="@id/text1"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:mainBtnBgColor="#FFDE6D"
+                    app:mainBtnIcon="@mipmap/ic_launcher"
+                    app:mainBtnIconRate="2.0"
+                    app:mainBtnRadius="5dp"
+                    app:mainBtnText="圆角矩形"
+                    app:mainBtnTextAlign="left_bottom"
+                    app:mainBtnTextColor="@android:color/black"
+                    app:mainBtnTextSize="15sp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="带图标的圆形：\n文本底部居中对齐"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.lazy.customviews.MainButton
+                    android:id="@+id/btnCircle"
+                    android:layout_width="108dp"
+                    android:layout_height="108dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintLeft_toRightOf="@id/text2"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:mainBtnBgColor="#FFDE6D"
+                    app:mainBtnIcon="@mipmap/ic_launcher"
+                    app:mainBtnIconRate="3.0"
+                    app:mainBtnRadius="54dp"
+                    app:mainBtnText="圆形"
+                    app:mainBtnTextAlign="bottom"
+                    app:mainBtnTextColor="@android:color/white"
+                    app:mainBtnTextSize="15sp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/text3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="带图标的矩形：\n文本右下角对齐"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.lazy.customviews.MainButton
+                    android:id="@+id/btnRect"
+                    android:layout_width="108dp"
+                    android:layout_height="108dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintLeft_toRightOf="@id/text3"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:mainBtnBgColor="#FFDE6D"
+                    app:mainBtnIcon="@mipmap/ic_launcher"
+                    app:mainBtnIconRate="4.0"
+                    app:mainBtnRadius="0dp"
+                    app:mainBtnText="矩形"
+                    app:mainBtnTextAlign="right_bottom"
+                    app:mainBtnTextColor="@android:color/holo_red_dark"
+                    app:mainBtnTextSize="15sp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/text4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="无图标的圆角矩形：\n文本底部居中"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.lazy.customviews.MainButton
+                    android:id="@+id/btnRoundRectWithoutIcon"
+                    android:layout_width="120dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintLeft_toRightOf="@id/text4"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:mainBtnBgColor="#FFDE6D"
+                    app:mainBtnIconRate="4.0"
+                    app:mainBtnRadius="10dp"
+                    app:mainBtnText="点击更新名称"
+                    app:mainBtnTextAlign="center"
+                    app:mainBtnTextColor="@android:color/holo_red_dark"
+                    app:mainBtnTextSize="15sp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--            <View-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="2dp"-->
+<!--                android:layout_margin="10dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:background="@color/colorAccent" />-->
+
+<!--            <com.lazy.customviews.MainButton-->
+<!--                android:id="@+id/goProgressiveReader"-->
+<!--                android:layout_width="108dp"-->
+<!--                android:layout_height="60dp"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:layout_marginLeft="10dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                app:mainBtnBgColor="#FFDE6D"-->
+<!--                app:mainBtnRadius="10dp"-->
+<!--                app:mainBtnText="逐行阅读"-->
+<!--                app:mainBtnTextAlign="center"-->
+<!--                app:mainBtnTextColor="@android:color/holo_red_dark"-->
+<!--                app:mainBtnTextSize="18sp" />-->
+
+<!--            <com.lazy.customviews.MainButton-->
+<!--                android:id="@+id/goBookFliper"-->
+<!--                android:layout_width="108dp"-->
+<!--                android:layout_height="60dp"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:layout_marginLeft="10dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:visibility="gone"-->
+<!--                app:mainBtnBgColor="#FFDE6D"-->
+<!--                app:mainBtnRadius="10dp"-->
+<!--                app:mainBtnText="翻书效果"-->
+<!--                app:mainBtnTextAlign="center"-->
+<!--                app:mainBtnTextColor="@android:color/holo_red_dark"-->
+<!--                app:mainBtnTextSize="18sp" />-->
+
+<!--            <com.lazy.customviews.MainButton-->
+<!--                android:id="@+id/goOcrActivity"-->
+<!--                android:layout_width="108dp"-->
+<!--                android:layout_height="60dp"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:layout_marginLeft="10dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                app:mainBtnBgColor="#FFDE6D"-->
+<!--                app:mainBtnRadius="10dp"-->
+<!--                app:mainBtnText="证件扫描"-->
+<!--                app:mainBtnTextAlign="center"-->
+<!--                app:mainBtnTextColor="@android:color/holo_red_dark"-->
+<!--                app:mainBtnTextSize="18sp" />-->
+
+<!--            <com.lazy.customviews.MainButton-->
+<!--                android:id="@+id/goHMS"-->
+<!--                android:layout_width="108dp"-->
+<!--                android:layout_height="60dp"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:layout_marginLeft="10dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                app:mainBtnBgColor="#FFDE6D"-->
+<!--                app:mainBtnRadius="10dp"-->
+<!--                app:mainBtnText="HuaWei HMS"-->
+<!--                app:mainBtnTextAlign="center"-->
+<!--                app:mainBtnTextColor="@android:color/holo_red_dark"-->
+<!--                app:mainBtnTextSize="18sp" />-->
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
