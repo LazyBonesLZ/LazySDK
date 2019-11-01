@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.app.ActivityCompat.requestPermissions
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.Util2
 import com.Utils
 import com.huawei.hms.ads.identifier.AdvertisingIdClient
 import com.huawei.hms.ads.installreferrer.api.InstallReferrerClient
@@ -21,13 +22,13 @@ import com.tjl.lazysdk.adapter.SimpleRecycleViewAdapter
 import kotlinx.android.synthetic.main.activity_hms.*
 import java.io.IOException
 import com.huawei.hms.aaid.HmsInstanceId
+import com.tjl.lazysdk.adapter.SimpleMenuAdapter
 
 
-
-
-class HMSActivity : AppCompatActivity(),SimpleRecycleViewAdapter.OnItemClickListener {
+class HMSActivity : AppCompatActivity(), SimpleMenuAdapter.OnItemClickListener {
 
     private var bSubscribed = false
+
     companion object {
         const val TAG = "HMSActivity"
     }
@@ -38,11 +39,13 @@ class HMSActivity : AppCompatActivity(),SimpleRecycleViewAdapter.OnItemClickList
         val data = arrayListOf(
             "HMS Ads-Kit: OAID",
             "HMS Location",
-            "HMS PUSH",
+            "HMS PUSH(Subscription)",
             "HMS IAP",
             "HMS Analytics"
         )
-        val adapter = SimpleRecycleViewAdapter(this, data)
+        val adapter = SimpleMenuAdapter(this, data)
+        val itemHeight = Utils.dpToPx(this, 60f)
+        adapter.itemHeight = itemHeight
         adapter.setOnItemClickListener(this)
         titleListView.layoutManager = LinearLayoutManager(this)
         titleListView.adapter = adapter
@@ -54,30 +57,43 @@ class HMSActivity : AppCompatActivity(),SimpleRecycleViewAdapter.OnItemClickList
     }
 
     override fun onItemClick(title: String, position: Int) {
-            when (title) {
-                "HMS Ads-Kit: OAID" -> {
-                    showOAID()
-                }
-
-                "HMS Location" -> {
-                    requesLoctionPermission()
-                }
-                "HMS PUSH" -> {
-                    if (bSubscribed){
-                        unSubscribe()
-                    }else{
-                        subscribe()
-                    }
-
-
-                }
-                "HMS IAP" -> {
-
-                }
-                "HMS Analytics" -> {
-
-                }
+        when (title) {
+            "HMS Ads-Kit: OAID" -> {
+                showOAID()
             }
+
+            "HMS Location" -> {
+                requesLoctionPermission()
+            }
+            "HMS PUSH(Subscription)" -> {
+                val emuiLevel = Util2.getEMUILevel()
+                if (emuiLevel > 0) {
+                    if (emuiLevel >= 21) {
+                        if (bSubscribed) {
+                            unSubscribe()
+                        } else {
+                            subscribe()
+                        }
+                    }else{
+                        runOnUiThread {
+                            Utils.showToast(this, "EMUI版本太低，不支持！")
+                        }
+                    }
+                } else {
+                    runOnUiThread {
+                        Utils.showToast(this, "不是EMUI?不支持！")
+                    }
+                }
+
+            }
+            "HMS IAP" -> {
+                startActivity(Intent(this@HMSActivity,HmsIapActivity::class.java))
+
+            }
+            "HMS Analytics" -> {
+                startActivity(Intent(this@HMSActivity, HmsAnalyticsActivity::class.java))
+            }
+        }
 
     }
 
@@ -188,6 +204,7 @@ class HMSActivity : AppCompatActivity(),SimpleRecycleViewAdapter.OnItemClickList
             }
         }
     }
+
     private fun hmsConnect() {
         Thread(Runnable {
             val hmsReferrerClient = InstallReferrerClient.newBuilder(this).build()
@@ -200,7 +217,7 @@ class HMSActivity : AppCompatActivity(),SimpleRecycleViewAdapter.OnItemClickList
                             Log.i(CustomButtonActivity.TAG, "FEATURE_NOT_SUPPORTED")
                         InstallReferrerClient.InstallReferrerResponse.SERVICE_UNAVAILABLE ->
                             Log.i(CustomButtonActivity.TAG, "SERVICE_UNAVAILABLE")
-                        else->
+                        else ->
                             Log.i(CustomButtonActivity.TAG, "responseCode: $responseCode")
                     }
                 }
@@ -213,7 +230,7 @@ class HMSActivity : AppCompatActivity(),SimpleRecycleViewAdapter.OnItemClickList
         }).start()
     }
 
-    private fun getToken(){
+    private fun getToken() {
         object : Thread() {
             override fun run() {
                 try {
@@ -228,33 +245,36 @@ class HMSActivity : AppCompatActivity(),SimpleRecycleViewAdapter.OnItemClickList
         }.start()
     }
 
-    private fun subscribe(){
+    private fun subscribe() {
         try {
             HmsMessaging.getInstance(this).subscribe("HMC").addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    runOnUiThread{
-                        Utils.showToast(this@HMSActivity,"subscribe Complete")
+                    runOnUiThread {
+                        Utils.showToast(this@HMSActivity, "subscribe Complete")
                     }
                     Log.i(TAG, "subscribe Complete")
                     bSubscribed = true
                 } else {
                     bSubscribed = false
-                    runOnUiThread{
-                        Utils.showToast(this@HMSActivity,"subscribe failed: ret=" + task.exception.message)
+                    runOnUiThread {
+                        Utils.showToast(
+                            this@HMSActivity,
+                            "subscribe failed: ret=" + task.exception.message
+                        )
                     }
                     Log.e(TAG, "subscribe failed: ret=" + task.exception.message)
                 }
             }
         } catch (e: Exception) {
-            runOnUiThread{
-                Utils.showToast(this@HMSActivity,"subscribe failed: exception=" + e.message)
+            runOnUiThread {
+                Utils.showToast(this@HMSActivity, "subscribe failed: exception=" + e.message)
             }
             Log.e(TAG, "subscribe failed: exception=" + e.message)
         }
 
     }
 
-    private fun unSubscribe(){
+    private fun unSubscribe() {
         try {
             HmsMessaging.getInstance(this).unsubscribe("HMC").addOnCompleteListener { task ->
                 if (task.isSuccessful) {

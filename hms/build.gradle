@@ -39,5 +39,11 @@ dependencies {
     api 'com.huawei.hms:location:3.0.0.301'
     api 'com.huawei.agconnect:agconnect-core:1.0.0.300'
     api 'com.huawei.hms:push:3.0.0.303'
+    api 'com.huawei.hms:hianalytics:2.3.0.301'
+    api 'com.huawei.hms:iap:3.0.0.301'
+    api 'com.google.code.gson:gson:2.8.5'
+//    api 'com.huawei.hms:hmssdk-base:2.7.0'
+//    api 'com.huawei.hms:hmssdk-opendevice:2.7.0'
+
 
 }

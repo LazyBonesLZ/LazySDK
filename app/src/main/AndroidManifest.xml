@@ -15,15 +15,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".HmsIapActivity"></activity>
+        <activity android:name=".HmsAnalyticsActivity" />
+
         <service
             android:name=".service.MyHmsService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.huawei.push.action.MESSAGING_EVENT" />
             </intent-filter>
-        </service>
-
-        <!--接入HMS Core Push SDK需要注册该Service-->
+        </service> <!-- 接入HMS Core Push SDK需要注册该Service -->
         <service
             android:name="com.huawei.hms.support.api.push.service.HmsMsgService"
             android:enabled="true"

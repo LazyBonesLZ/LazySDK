@@ -10,11 +10,15 @@ import kotlinx.android.synthetic.main.layout_list_item.view.*
 import kotlinx.android.synthetic.main.layout_menu_item.view.*
 
 
-class SimpleMenuAdapter(var context: Context, var mDataList:ArrayList<String>):RecyclerView.Adapter<SimpleMenuAdapter.ViewHolder>() {
-     private var onItemClickListener :OnItemClickListener? = null
+class SimpleMenuAdapter(var context: Context, var mDataList: ArrayList<String>) :
+    RecyclerView.Adapter<SimpleMenuAdapter.ViewHolder>() {
+    private var onItemClickListener: OnItemClickListener? = null
+    var itemHeight = 0
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val root= LayoutInflater.from(context).inflate(R.layout.layout_menu_item,parent,
-            false)
+        val root = LayoutInflater.from(context).inflate(
+            R.layout.layout_menu_item, parent,
+            false
+        )
         return ViewHolder(root)
     }
 
@@ -25,20 +29,23 @@ class SimpleMenuAdapter(var context: Context, var mDataList:ArrayList<String>):R
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val title = mDataList[position]
         holder.button.setTitle(title)
+        if (itemHeight != 0){
+            holder.button.height = itemHeight
+        }
         holder.button.setOnClickListener {
-            onItemClickListener?.onItemClick(title,position)
+            onItemClickListener?.onItemClick(title, position)
         }
     }
 
-    fun setOnItemClickListener(listener: OnItemClickListener){
+    fun setOnItemClickListener(listener: OnItemClickListener) {
         this.onItemClickListener = listener
     }
 
-    class ViewHolder(root: View):RecyclerView.ViewHolder(root){
+    class ViewHolder(root: View) : RecyclerView.ViewHolder(root) {
         val button = root.menuButton
     }
 
-    interface OnItemClickListener{
-        fun onItemClick(title:String,position: Int)
+    interface OnItemClickListener {
+        fun onItemClick(title: String, position: Int)
     }
 }

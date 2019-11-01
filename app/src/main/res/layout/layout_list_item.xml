@@ -1,28 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:paddingBottom="10dp"
     android:layout_height="wrap_content">
-<!--    <Button-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="60dp"-->
-<!--        android:gravity="center"-->
-<!--        android:textAllCaps="false"-->
-<!--        android:textSize="20sp"-->
-<!--        tools:text = "dfsdfsdf"-->
-<!--        android:id="@+id/itemTitle"/>-->
-    <com.lazy.customviews.MainButton
-        android:id="@+id/itemTitle"
+    <Button
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        app:mainBtnBgColor="#FFDE6D"
-        app:mainBtnRadius="10dp"
-        app:mainBtnText="HuaWei HMS"
-        app:mainBtnTextSize="18sp"
-        app:mainBtnTextColor="@android:color/holo_red_dark"
-        app:mainBtnTextAlign="center" />
-
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        tools:text = "dfsdfsdf"
+        android:id="@+id/itemTitle"/>
 
 </LinearLayout>

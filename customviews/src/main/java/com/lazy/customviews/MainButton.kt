@@ -40,7 +40,12 @@ class MainButton : View {
     }
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
-    constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int, defStyleRes: Int) : super(
+    constructor(
+        context: Context?,
+        attrs: AttributeSet?,
+        defStyleAttr: Int,
+        defStyleRes: Int
+    ) : super(
         context,
         attrs,
         defStyleAttr,
@@ -224,14 +229,20 @@ class MainButton : View {
         bTouchCost = false
     }
 
-    fun setTitle(title:String){
+    fun setTitle(title: String) {
         text = title
         invalidate()
     }
-    fun setColor(color:Int){
+
+    fun setHeight(height: Int) {
+        layoutParams.height = height
+        invalidate()
+    }
+
+    fun setColor(color: Int) {
         mBackGroundColor = color
         normalColor = mBackGroundColor
-        pressedColor =getPressedColor(mBackGroundColor,0.5f)
+        pressedColor = getPressedColor(mBackGroundColor, 0.5f)
         invalidate()
     }
 
