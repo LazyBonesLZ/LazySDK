@@ -1,0 +1,98 @@
+2019-11-01 18:33:31.532 25042-25042/com.car.manage I/HwPointEventFilter: do not support AFT because of no config
+2019-11-01 18:33:31.582 25042-25070/com.car.manage I/Adreno: QUALCOMM build                   : 26f5f0d, I4f723aa5a2
+    Build Date                       : 04/26/17
+    OpenGL ES Shader Compiler Version: XE031.09.00.03
+    Local Branch                     : 
+    Remote Branch                    : refs/tags/AU_LINUX_ANDROID_LA.UM.5.5.R1.07.00.00.269.013
+    Remote Branch                    : NONE
+    Reconstruct Branch               : NOTHING
+2019-11-01 18:33:31.591 25042-25070/com.car.manage I/OpenGLRenderer: Initialized EGL, version 1.4
+2019-11-01 18:33:31.602 25042-25070/com.car.manage W/OpenGLRenderer: load: so=libhwuibp.so
+    dlopen failed: library "libhwuibp.so" not found
+2019-11-01 18:33:31.602 25042-25070/com.car.manage W/OpenGLRenderer: Initialize Binary Program Cache: Load Failed
+2019-11-01 18:33:54.050 25042-25070/com.car.manage I/Adreno: QUALCOMM build                   : 26f5f0d, I4f723aa5a2
+    Build Date                       : 04/26/17
+    OpenGL ES Shader Compiler Version: XE031.09.00.03
+    Local Branch                     : 
+    Remote Branch                    : refs/tags/AU_LINUX_ANDROID_LA.UM.5.5.R1.07.00.00.269.013
+    Remote Branch                    : NONE
+    Reconstruct Branch               : NOTHING
+2019-11-01 18:33:54.059 25042-25070/com.car.manage I/OpenGLRenderer: Initialized EGL, version 1.4
+2019-11-01 18:34:02.731 25042-25042/com.car.manage I/hwaps: JNI_OnLoad
+2019-11-01 18:34:02.859 25042-25697/com.car.manage I/ReferrerClientImpl: startConnection starting service setup
+2019-11-01 18:34:02.866 25042-25042/com.car.manage I/HwPointEventFilter: do not support AFT because of no config
+2019-11-01 18:34:02.867 25042-25698/com.car.manage I/HMSSDK_HuaweiApi: Builder->biInitFlag :false
+2019-11-01 18:34:02.936 25042-25698/com.car.manage I/HMSSDK_HuaweiApi: Builder->biSetting :false
+2019-11-01 18:34:02.937 25042-25697/com.car.manage I/ReferrerClientImpl: startConnection service was bonded ok
+2019-11-01 18:34:02.938 25042-25698/com.car.manage W/NetworkKit_c: local config file is not exist
+2019-11-01 18:34:02.938 25042-25698/com.car.manage W/NetworkKit_a: getConfigMgr configContent is null.
+2019-11-01 18:34:02.938 25042-25698/com.car.manage W/NetworkKit_a: updateCountryGroupMap return null because {null == countryGroups}
+2019-11-01 18:34:02.944 25042-25698/com.car.manage W/NetworkKit_a: addresses not found by routeby in local config{com.huawei.cloud.hianalytics.issue}
+2019-11-01 18:34:02.945 25042-25705/com.car.manage I/NetworkKit_RequestController: hitGrsRequestBean == null
+2019-11-01 18:34:02.993 25042-25042/com.car.manage I/ReferrerClientImpl: onServiceConnected
+2019-11-01 18:34:02.994 25042-25042/com.car.manage I/CustomButtonActivity: connect ads kit ok
+2019-11-01 18:34:03.033 25042-25702/com.car.manage I/HMSSDK_HuaweiApiManager: sendRequest
+2019-11-01 18:34:03.033 25042-25702/com.car.manage I/HMSSDK_BaseHmsClient: ====== HMSSDK version: 30000303 ======
+2019-11-01 18:34:03.034 25042-25702/com.car.manage I/HMSSDK_BaseHmsClient: Enter connect, Connection Status: 1
+2019-11-01 18:34:03.034 25042-25702/com.car.manage I/HMSSDK_BaseHmsClient: connect minVersion:30000000
+2019-11-01 18:34:03.065 25042-25702/com.car.manage I/HMSSDK_HMSPackageManager: Succeed to find HMS apk : com.huawei.hwid
+2019-11-01 18:34:03.067 25042-25702/com.car.manage I/HMSSDK_AvailableAdatpter: connect versionCode:30001303
+2019-11-01 18:34:03.074 25042-25042/com.car.manage I/HMSSDK_BinderAdapter: Enter onServiceConnected.
+2019-11-01 18:34:03.076 25042-25702/com.car.manage I/HMSSDK_HmsClient: post msg api_name:push.gettoken, app_id:101238653|, pkg_name:com.car.manage, sdk_version:30000303, session_id:*, transaction_id:101238653ttoken20191101183402945155452
+2019-11-01 18:34:03.077 25042-25702/com.car.manage I/HMSSDK_BaseAdapter: in baseRequest + uri is :push.gettoken, transactionId is : 101238653ttoken20191101183402945155452
+2019-11-01 18:34:03.078 25042-25702/com.car.manage I/HMSSDK_PendingResultImpl: init uri:push.gettoken
+2019-11-01 18:34:03.079 25042-25702/com.car.manage I/HMSSDK_PendingResultImpl: setResultCallback
+2019-11-01 18:34:03.092 25042-25054/com.car.manage I/HMSSDK_PendingResultImpl: setResult:0
+2019-11-01 18:34:03.094 25042-25042/com.car.manage I/HMSSDK_BaseAdapter: baseCallBack.onComplete
+2019-11-01 18:34:03.095 25042-25042/com.car.manage I/HMSSDK_HmsClient: receive msg status_code:0, error_code0, api_name:push.gettoken, app_id:101238653|, pkg_name:com.car.manage, session_id:*, transaction_id:101238653ttoken20191101183402945155452, resolution:null
+2019-11-01 18:34:03.097 25042-25042/com.car.manage I/HMSSDK_HmsInstanceId: GetTokenTask receive a empty token, please check HmsMessageService.onNewToken receive result.
+2019-11-01 18:34:03.097 25042-25698/com.car.manage E/HMSActivity: getToken:
+2019-11-01 18:34:03.238 25042-25042/com.car.manage I/HMSSDK_PushReceiver: push receive broadcast message, Intent:com.huawei.android.push.intent.REGISTRATION pkgName:com.car.manage
+2019-11-01 18:34:03.243 25042-25727/com.car.manage I/HMSSDK_PushReceiver: receive a push token: com.car.manage
+2019-11-01 18:34:03.251 25042-25727/com.car.manage I/HMSSDK_PushReceiver: receive a token, refresh the local token
+2019-11-01 18:34:03.263 25042-25727/com.car.manage I/HMSSDK_RemoteService: remote service bind service start
+2019-11-01 18:34:03.269 25042-25042/com.car.manage I/HMSSDK_HmsMessageService: start to bind
+2019-11-01 18:34:03.271 25042-25042/com.car.manage I/HMSSDK_RemoteService: remote service onConnected
+2019-11-01 18:34:03.272 25042-25042/com.car.manage I/HMSSDK_RemoteService: remote service unbindservice
+2019-11-01 18:34:03.274 25042-25042/com.car.manage I/HMSSDK_HmsMessageService: handle message start 
+2019-11-01 18:34:03.275 25042-25042/com.car.manage I/HMSSDK_HmsMessageService: onNewToken
+2019-11-01 18:34:03.275 25042-25042/com.car.manage I/MyHmsService: Token:0861007030685047300004869000CN01
+2019-11-01 18:34:03.275 25042-25042/com.car.manage I/HMSSDK_HmsMessageService: start to destroy
+2019-11-01 18:34:03.451 25042-25710/com.car.manage W/NetworkKit_HianalyticsHelper: maybe you need add Hianalytics sdk
+2019-11-01 18:34:04.055 25042-25042/com.car.manage I/HMSActivity: sdk < 28 Q
+2019-11-01 18:34:06.618 25042-25042/com.car.manage I/HMSActivity: onRequestPermissionsResult: apply LOCATION PERMISSION successful
+2019-11-01 18:34:06.666 25042-25042/com.car.manage I/HMSSDK_HuaweiApi: Builder->biInitFlag :true
+2019-11-01 18:34:06.666 25042-25042/com.car.manage I/HMSSDK_HuaweiApi: Builder->biInitFlag :true
+2019-11-01 18:34:06.674 25042-25042/com.car.manage I/HwPointEventFilter: do not support AFT because of no config
+2019-11-01 18:34:08.449 25042-25042/com.car.manage I/HMSSDK_LocationClientImpl: |f90942d6-d1de-46b8-b0f8-42994b51e11a|checkLocationSettings
+2019-11-01 18:34:08.455 25042-25702/com.car.manage I/HMSSDK_HuaweiApiManager: sendRequest
+2019-11-01 18:34:08.456 25042-25702/com.car.manage I/HMSSDK_BaseHmsClient: ====== HMSSDK version: 30000303 ======
+2019-11-01 18:34:08.457 25042-25702/com.car.manage I/HMSSDK_BaseHmsClient: Enter connect, Connection Status: 1
+2019-11-01 18:34:08.459 25042-25702/com.car.manage I/HMSSDK_BaseHmsClient: connect minVersion:30000000
+2019-11-01 18:34:08.462 25042-25702/com.car.manage I/HMSSDK_AvailableAdatpter: connect versionCode:30001303
+2019-11-01 18:34:08.473 25042-25042/com.car.manage I/HMSSDK_BinderAdapter: Enter onServiceConnected.
+2019-11-01 18:34:08.474 25042-25042/com.car.manage I/HMSSDK_LocationClientBuilder: onConnected, send suspended requests
+2019-11-01 18:34:08.479 25042-25747/com.car.manage I/HMSSDK_LocationClientBuilder: onConnected, requests cache list is empty
+2019-11-01 18:34:08.482 25042-25702/com.car.manage I/HMSSDK_HmsClient: post msg api_name:location.checkLocationSettings, app_id:101238653|, pkg_name:com.car.manage, sdk_version:30000303, session_id:*, transaction_id:101238653ttings20191101183408475694077
+2019-11-01 18:34:08.485 25042-25702/com.car.manage I/HMSSDK_BaseAdapter: in baseRequest + uri is :location.checkLocationSettings, transactionId is : 101238653ttings20191101183408475694077
+2019-11-01 18:34:08.487 25042-25702/com.car.manage I/HMSSDK_PendingResultImpl: init uri:location.checkLocationSettings
+2019-11-01 18:34:08.489 25042-25702/com.car.manage I/HMSSDK_PendingResultImpl: setResultCallback
+2019-11-01 18:34:08.509 25042-25053/com.car.manage I/HMSSDK_PendingResultImpl: setResult:0
+2019-11-01 18:34:08.511 25042-25042/com.car.manage I/HMSSDK_BaseAdapter: baseCallBack.onComplete
+2019-11-01 18:34:08.512 25042-25042/com.car.manage I/HMSSDK_HmsClient: receive msg status_code:0, error_code0, api_name:location.checkLocationSettings, app_id:101238653|, pkg_name:com.car.manage, session_id:*, transaction_id:101238653ttings20191101183408475694077, resolution:null
+2019-11-01 18:34:08.513 25042-25042/com.car.manage I/HMSSDK_CheckLocationSettingsTaskApiCall: |f90942d6-d1de-46b8-b0f8-42994b51e11a|doExecute
+2019-11-01 18:34:08.515 25042-25042/com.car.manage I/HMSSDK_ServiceErrorCodeAdaptor: set task by error code:0,reason:SUCCESS
+2019-11-01 18:34:08.520 25042-25042/com.car.manage I/HMSSDK_LocationClientImpl: |5090bfe9-c8cf-4bef-8074-1d6bc5897e7c|request location updates with callback begin
+2019-11-01 18:34:08.525 25042-25702/com.car.manage I/HMSSDK_HuaweiApiManager: sendRequest
+2019-11-01 18:34:08.527 25042-25702/com.car.manage I/HMSSDK_HmsClient: post msg api_name:location.requestLocationUpdates, app_id:101238653|, pkg_name:com.car.manage, sdk_version:30000303, session_id:*, transaction_id:101238653pdates20191101183408521466021
+2019-11-01 18:34:08.529 25042-25702/com.car.manage I/HMSSDK_BaseAdapter: in baseRequest + uri is :location.requestLocationUpdates, transactionId is : 101238653pdates20191101183408521466021
+2019-11-01 18:34:08.531 25042-25702/com.car.manage I/HMSSDK_PendingResultImpl: init uri:location.requestLocationUpdates
+2019-11-01 18:34:08.532 25042-25702/com.car.manage I/HMSSDK_PendingResultImpl: setResultCallback
+2019-11-01 18:34:08.568 25042-25054/com.car.manage I/HMSSDK_PendingResultImpl: setResult:0
+2019-11-01 18:34:08.571 25042-25042/com.car.manage I/HMSSDK_BaseAdapter: baseCallBack.onComplete
+2019-11-01 18:34:08.573 25042-25042/com.car.manage I/HMSSDK_HmsClient: receive msg status_code:0, error_code0, api_name:location.requestLocationUpdates, app_id:101238653|, pkg_name:com.car.manage, session_id:*, transaction_id:101238653pdates20191101183408521466021, resolution:null
+2019-11-01 18:34:08.575 25042-25042/com.car.manage I/HMSSDK_RequestLocationUpdatesTaskApiCall: |5090bfe9-c8cf-4bef-8074-1d6bc5897e7c|doExecute
+2019-11-01 18:34:08.577 25042-25042/com.car.manage I/HMSSDK_TidCacheManager: |5090bfe9-c8cf-4bef-8074-1d6bc5897e7c|list to add size is:0
+2019-11-01 18:34:08.578 25042-25042/com.car.manage I/HMSSDK_TidCacheManager: |5090bfe9-c8cf-4bef-8074-1d6bc5897e7c|add request
+2019-11-01 18:34:08.579 25042-25042/com.car.manage I/HMSSDK_ServiceErrorCodeAdaptor: set task by error code:0,reason:SUCCESS
+2019-11-01 18:34:08.581 25042-25042/com.car.manage I/HMSLocationActivity: requestLocationUpdatesWithCallback onSuccess

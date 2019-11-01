@@ -1,0 +1,96 @@
+2019-11-01 18:43:17.022 7580-7580/? I/com.car.manage: Late-enabling -Xcheck:jni
+2019-11-01 18:43:17.209 7580-7580/? W/com.car.manage: miui_dex2oat: oat file of /data/app/com.car.manage-vDNgiE6DXo81WLXxFj9jPQ==/base.apk is not exists
+2019-11-01 18:43:17.423 7580-7580/? I/Perf: Connecting to perf service.
+2019-11-01 18:43:17.707 7580-7580/? W/com.car.manage: Accessing hidden method Landroid/graphics/drawable/Drawable;->getOpticalInsets()Landroid/graphics/Insets; (light greylist, linking)
+2019-11-01 18:43:17.707 7580-7580/? W/com.car.manage: Accessing hidden field Landroid/graphics/Insets;->left:I (light greylist, linking)
+2019-11-01 18:43:17.707 7580-7580/? W/com.car.manage: Accessing hidden field Landroid/graphics/Insets;->right:I (light greylist, linking)
+2019-11-01 18:43:17.707 7580-7580/? W/com.car.manage: Accessing hidden field Landroid/graphics/Insets;->top:I (light greylist, linking)
+2019-11-01 18:43:17.707 7580-7580/? W/com.car.manage: Accessing hidden field Landroid/graphics/Insets;->bottom:I (light greylist, linking)
+2019-11-01 18:43:17.719 7580-7657/? I/com.car.manage: The ClassLoaderContext is a special shared library.
+2019-11-01 18:43:17.714 7580-7580/? W/Binder:intercep: type=1400 audit(0.0:322650): avc: denied { getattr } for path="/data/data/com.miui.contentcatcher" dev="dm-1" ino=680110 scontext=u:r:untrusted_app:s0:c13,c257,c512,c768 tcontext=u:object_r:system_app_data_file:s0 tclass=dir permissive=0
+2019-11-01 18:43:17.726 7580-7657/? D/ViewContentFactory: initViewContentFetcherClass
+2019-11-01 18:43:17.726 7580-7657/? D/ViewContentFactory: getInterceptorPackageInfo
+2019-11-01 18:43:17.726 7580-7657/? W/com.car.manage: Accessing hidden method Landroid/app/AppGlobals;->getInitialApplication()Landroid/app/Application; (light greylist, linking)
+2019-11-01 18:43:17.727 7580-7657/? D/ViewContentFactory: getInitialApplication took 1ms
+2019-11-01 18:43:17.727 7580-7657/? D/ViewContentFactory: packageInfo.packageName: com.miui.catcherpatch
+2019-11-01 18:43:17.724 7580-7580/? W/Binder:intercep: type=1400 audit(0.0:322651): avc: denied { getattr } for path="/data/data/com.miui.catcherpatch" dev="dm-1" ino=688382 scontext=u:r:untrusted_app:s0:c13,c257,c512,c768 tcontext=u:object_r:system_app_data_file:s0 tclass=dir permissive=0
+2019-11-01 18:43:17.736 7580-7657/? D/ViewContentFactory: initViewContentFetcherClass took 11ms
+2019-11-01 18:43:17.737 7580-7657/? I/ContentCatcher: ViewContentFetcher : ViewContentFetcher
+2019-11-01 18:43:17.737 7580-7657/? D/ViewContentFactory: createInterceptor took 11ms
+2019-11-01 18:43:17.790 7580-7580/? W/com.car.manage: Accessing hidden method Landroid/view/View;->computeFitSystemWindows(Landroid/graphics/Rect;Landroid/graphics/Rect;)Z (light greylist, reflection)
+2019-11-01 18:43:17.791 7580-7580/? W/com.car.manage: Accessing hidden method Landroid/view/ViewGroup;->makeOptionalFitsSystemWindows()V (light greylist, reflection)
+2019-11-01 18:43:17.800 7580-7580/? W/com.car.manage: Accessing hidden method Landroid/widget/TextView;->getTextDirectionHeuristic()Landroid/text/TextDirectionHeuristic; (light greylist, linking)
+2019-11-01 18:43:17.889 7580-7580/? W/Looper: Slow Looper main: Activity com.car.manage/com.tjl.lazysdk.MenuActivity is 446ms late (wall=238ms running=0ms ClientTransaction{ callbacks=[android.app.servertransaction.LaunchActivityItem] lifecycleRequest=android.app.servertransaction.ResumeActivityItem }) because of 1 msg, msg 1 took 552ms (late=1ms h=android.app.ActivityThread$H w=110)
+2019-11-01 18:43:17.929 7580-7658/? I/Adreno: QUALCOMM build                   : ce8a911, I385ac5a262
+    Build Date                       : 03/28/19
+    OpenGL ES Shader Compiler Version: EV031.25.03.01
+    Local Branch                     : 
+    Remote Branch                    : refs/tags/AU_LINUX_ANDROID_LA.UM.7.2.R1.09.00.00.442.052
+    Remote Branch                    : NONE
+    Reconstruct Branch               : NOTHING
+2019-11-01 18:43:17.929 7580-7658/? I/Adreno: Build Config                     : S L 6.0.7 AArch64
+2019-11-01 18:43:17.929 7580-7658/? D/vndksupport: Loading /vendor/lib64/hw/gralloc.sdm660.so from current namespace instead of sphal namespace.
+2019-11-01 18:43:17.932 7580-7658/? I/Adreno: PFP: 0x005ff112, ME: 0x005ff066
+2019-11-01 18:43:17.936 7580-7658/? I/ConfigStore: android::hardware::configstore::V1_0::ISurfaceFlingerConfigs::hasWideColorDisplay retrieved: 0
+2019-11-01 18:43:17.936 7580-7658/? I/ConfigStore: android::hardware::configstore::V1_0::ISurfaceFlingerConfigs::hasHDRDisplay retrieved: 0
+2019-11-01 18:43:17.936 7580-7658/? I/OpenGLRenderer: Initialized EGL, version 1.4
+2019-11-01 18:43:17.936 7580-7658/? D/OpenGLRenderer: Swap behavior 2
+2019-11-01 18:43:17.951 7580-7658/? D/vndksupport: Loading /vendor/lib64/hw/android.hardware.graphics.mapper@2.0-impl.so from current namespace instead of sphal namespace.
+2019-11-01 18:43:17.952 7580-7658/? D/vndksupport: Loading /vendor/lib64/hw/gralloc.sdm660.so from current namespace instead of sphal namespace.
+2019-11-01 18:43:26.385 7580-7580/com.car.manage I/Timeline: Timeline: Activity_launch_request time:1421627874 intent:Intent { cmp=com.car.manage/com.tjl.lazysdk.HMSActivity }
+2019-11-01 18:43:26.430 7580-7580/com.car.manage W/ActivityThread: handleWindowVisibility: no activity for token android.os.BinderProxy@671487f
+2019-11-01 18:43:26.443 7580-7657/com.car.manage D/ViewContentFactory: initViewContentFetcherClass
+2019-11-01 18:43:26.443 7580-7657/com.car.manage I/ContentCatcher: ViewContentFetcher : ViewContentFetcher
+2019-11-01 18:43:26.443 7580-7657/com.car.manage D/ViewContentFactory: createInterceptor took 0ms
+2019-11-01 18:43:26.464 7580-7701/com.car.manage I/ReferrerClientImpl: startConnection starting service setup
+2019-11-01 18:43:26.474 7580-7701/com.car.manage I/ReferrerClientImpl: startConnection service was bonded ok
+2019-11-01 18:43:26.482 7580-7702/com.car.manage I/HMSSDK_HuaweiApi: Builder->biInitFlag :false
+2019-11-01 18:43:26.486 7580-7702/com.car.manage I/HMSSDK_HuaweiApi: Builder->biSetting :false
+2019-11-01 18:43:26.495 7580-7702/com.car.manage W/NetworkKit_c: local config file is not exist
+2019-11-01 18:43:26.495 7580-7702/com.car.manage W/NetworkKit_a: getConfigMgr configContent is null.
+2019-11-01 18:43:26.496 7580-7702/com.car.manage W/NetworkKit_a: updateCountryGroupMap return null because {null == countryGroups}
+2019-11-01 18:43:26.542 7580-7705/com.car.manage I/HMSSDK_HuaweiApiManager: sendRequest
+2019-11-01 18:43:26.544 7580-7705/com.car.manage I/HMSSDK_BaseHmsClient: ====== HMSSDK version: 30000303 ======
+2019-11-01 18:43:26.545 7580-7705/com.car.manage I/HMSSDK_BaseHmsClient: Enter connect, Connection Status: 1
+2019-11-01 18:43:26.546 7580-7705/com.car.manage I/HMSSDK_BaseHmsClient: connect minVersion:30000000
+2019-11-01 18:43:26.554 7580-7580/com.car.manage I/ReferrerClientImpl: onServiceConnected
+2019-11-01 18:43:26.554 7580-7580/com.car.manage I/CustomButtonActivity: connect ads kit ok
+2019-11-01 18:43:26.587 7580-7705/com.car.manage I/HMSSDK_HMSPackageManager: Succeed to find HMS apk : com.huawei.hwid
+2019-11-01 18:43:26.591 7580-7705/com.car.manage I/HMSSDK_AvailableAdatpter: connect versionCode:30001302
+2019-11-01 18:43:26.599 7580-7580/com.car.manage I/HMSSDK_BinderAdapter: Enter onServiceConnected.
+2019-11-01 18:43:26.602 7580-7705/com.car.manage I/HMSSDK_HmsClient: post msg api_name:push.gettoken, app_id:101238653|, pkg_name:com.car.manage, sdk_version:30000303, session_id:*, transaction_id:101238653ttoken20191101184326517966759
+2019-11-01 18:43:26.606 7580-7705/com.car.manage I/HMSSDK_BaseAdapter: in baseRequest + uri is :push.gettoken, transactionId is : 101238653ttoken20191101184326517966759
+2019-11-01 18:43:26.610 7580-7705/com.car.manage I/HMSSDK_PendingResultImpl: init uri:push.gettoken
+2019-11-01 18:43:26.612 7580-7705/com.car.manage I/HMSSDK_PendingResultImpl: setResultCallback
+2019-11-01 18:43:26.633 7580-7597/com.car.manage I/HMSSDK_PendingResultImpl: setResult:0
+2019-11-01 18:43:26.639 7580-7580/com.car.manage I/HMSSDK_BaseAdapter: baseCallBack.onComplete
+2019-11-01 18:43:26.641 7580-7580/com.car.manage I/HMSSDK_HmsClient: receive msg status_code:0, error_code0, api_name:push.gettoken, app_id:101238653|, pkg_name:com.car.manage, session_id:*, transaction_id:101238653ttoken20191101184326517966759, resolution:null
+2019-11-01 18:43:26.660 7580-7702/com.car.manage E/HMSActivity: getToken:ANvtt_-yIqkI4gdVnKpoXR_W8D5FqEBTTsc0fIlfOnhEX7NtnJfjFf-9EApcPChphkKFetiWZH_67xTiF2IAF4R3w_e-WR8pwZvYCxGqWPqv5nWgdF0NeXjVykJCcDTJ9g
+2019-11-01 18:43:28.588 7580-7711/com.car.manage D/SharedPreferencesImpl: Time required to fsync /data/user/0/com.car.manage/shared_prefs/hms_stat_v2_1_com.car.manage.xml: [<1: 0, <2: 0, <4: 0, <8: 0, <16: 0, <32: 0, <64: 0, <128: 0, <256: 0, <512: 1, <1024: 0, <2048: 0, <4096: 0, <8192: 0, <16384: 0, >=16384: 0]
+2019-11-01 18:43:28.963 7580-7711/com.car.manage D/SharedPreferencesImpl: Time required to fsync /data/user/0/com.car.manage/shared_prefs/hms_stat_v2_1_com.car.manage.xml: [<1: 0, <2: 0, <4: 0, <8: 0, <16: 0, <32: 0, <64: 0, <128: 0, <256: 0, <512: 2, <1024: 0, <2048: 0, <4096: 0, <8192: 0, <16384: 0, >=16384: 0]
+2019-11-01 18:43:32.025 7580-7580/com.car.manage I/HMSActivity: sdk < 28 Q
+2019-11-01 18:43:32.027 7580-7580/com.car.manage I/Timeline: Timeline: Activity_launch_request time:1421633515 intent:Intent { cmp=com.car.manage/com.tjl.lazysdk.HMSLocationActivity }
+2019-11-01 18:43:32.062 7580-7580/com.car.manage W/ActivityThread: handleWindowVisibility: no activity for token android.os.BinderProxy@9fc8ec8
+2019-11-01 18:43:32.077 7580-7657/com.car.manage D/ViewContentFactory: initViewContentFetcherClass
+2019-11-01 18:43:32.077 7580-7657/com.car.manage I/ContentCatcher: ViewContentFetcher : ViewContentFetcher
+2019-11-01 18:43:32.077 7580-7657/com.car.manage D/ViewContentFactory: createInterceptor took 0ms
+2019-11-01 18:43:32.117 7580-7580/com.car.manage I/HMSSDK_HuaweiApi: Builder->biInitFlag :true
+2019-11-01 18:43:32.119 7580-7580/com.car.manage I/HMSSDK_HuaweiApi: Builder->biInitFlag :true
+2019-11-01 18:43:37.796 7580-7580/com.car.manage I/HMSSDK_LocationClientImpl: |7798255c-8d45-4451-a17f-417b784e9645|checkLocationSettings
+2019-11-01 18:43:37.813 7580-7705/com.car.manage I/HMSSDK_HuaweiApiManager: sendRequest
+2019-11-01 18:43:37.815 7580-7705/com.car.manage I/HMSSDK_BaseHmsClient: ====== HMSSDK version: 30000303 ======
+2019-11-01 18:43:37.817 7580-7705/com.car.manage I/HMSSDK_BaseHmsClient: Enter connect, Connection Status: 1
+2019-11-01 18:43:37.818 7580-7705/com.car.manage I/HMSSDK_BaseHmsClient: connect minVersion:30000000
+2019-11-01 18:43:37.824 7580-7705/com.car.manage I/HMSSDK_AvailableAdatpter: connect versionCode:30001302
+2019-11-01 18:43:37.839 7580-7580/com.car.manage I/HMSSDK_BinderAdapter: Enter onServiceConnected.
+2019-11-01 18:43:37.840 7580-7580/com.car.manage I/HMSSDK_LocationClientBuilder: onConnected, send suspended requests
+2019-11-01 18:43:37.847 7580-7705/com.car.manage I/HMSSDK_HmsClient: post msg api_name:location.checkLocationSettings, app_id:101238653|, pkg_name:com.car.manage, sdk_version:30000303, session_id:*, transaction_id:101238653ttings20191101184337841231513
+2019-11-01 18:43:37.852 7580-7705/com.car.manage I/HMSSDK_BaseAdapter: in baseRequest + uri is :location.checkLocationSettings, transactionId is : 101238653ttings20191101184337841231513
+2019-11-01 18:43:37.853 7580-7731/com.car.manage I/HMSSDK_LocationClientBuilder: onConnected, requests cache list is empty
+2019-11-01 18:43:37.856 7580-7705/com.car.manage I/HMSSDK_PendingResultImpl: init uri:location.checkLocationSettings
+2019-11-01 18:43:37.857 7580-7705/com.car.manage I/HMSSDK_PendingResultImpl: setResultCallback
+2019-11-01 18:43:37.901 7580-7597/com.car.manage I/HMSSDK_PendingResultImpl: setResult:0
+2019-11-01 18:43:37.904 7580-7580/com.car.manage I/HMSSDK_BaseAdapter: baseCallBack.onComplete
+2019-11-01 18:43:37.905 7580-7580/com.car.manage I/HMSSDK_HmsClient: receive msg status_code:0, error_code0, api_name:location.checkLocationSettings, app_id:101238653|, pkg_name:com.car.manage, session_id:*, transaction_id:101238653ttings20191101184337841231513, resolution:null
+2019-11-01 18:43:37.908 7580-7580/com.car.manage I/HMSSDK_CheckLocationSettingsTaskApiCall: |7798255c-8d45-4451-a17f-417b784e9645|doExecute
+2019-11-01 18:43:37.911 7580-7580/com.car.manage E/HMSLocationActivity: checkLocationSetting onFailure:6: 
