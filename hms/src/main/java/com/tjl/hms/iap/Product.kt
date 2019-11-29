@@ -12,7 +12,7 @@ class Product {
     var type = Constants.PRODUCT_TYPE_CONSUMABLE
     var inAppPurchaseDataJson: String? = null
     var inAppSignature: String? = null
-    var consumeState = Constants.STATE_UNCONSUMED
+    var consumeState = Constants.STATE_CONSUMED
 
 }
 

@@ -25,7 +25,7 @@ object Constants {
     /** the state of purchase*/
     val STATE_NON_BUY = -1  //未购买
     val STATE_PURCHASED = 0 //已完成支付
-    val STATE_UNPURCHASE = 1 //未支付
+    val STATE_NOT_OWNED = 1 //已取消（仅针对可续订商品）
     val STATE_REFUNDED = 2 //已退款
 
     val STATE_CONSUMED = 3

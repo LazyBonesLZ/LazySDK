@@ -33,12 +33,16 @@ class SimpleIapAdapter(var context: Context, var mDataList: ArrayList<Product>?)
         when (product.type) {
             Constants.PRODUCT_TYPE_RENEWABLE_SUBSCRIPTION -> {
                 holder.button.setTitle("订阅")
+                holder.icon.setBackgroundResource(R.mipmap.subscribe)
             }
             Constants.PRODUCT_TYPE_CONSUMABLE -> {
-
+                holder.icon.setBackgroundResource(R.mipmap.coin)
                 holder.clickArea.setOnClickListener {
                     onItemClickListener?.onItemClick(product, position, Constants.ACTION_CONSUME)
                 }
+            }
+            Constants.PRODUCT_TYPE_NON_CONSUMABLE -> {
+                holder.icon.setBackgroundResource(R.mipmap.noads)
             }
 
         }
@@ -56,11 +60,11 @@ class SimpleIapAdapter(var context: Context, var mDataList: ArrayList<Product>?)
                 Constants.STATE_NON_BUY -> {
                     status = "未购买"
                 }
-                Constants.STATE_UNPURCHASE -> {
-                    status = "未支付"
+                Constants.STATE_NOT_OWNED -> {
+                    status = "已取消"
                     if (product.type == Constants.PRODUCT_TYPE_RENEWABLE_SUBSCRIPTION){
                         status = if (inAppPurchaseData.subIsvalid){
-                            "已取消，剩余有效天数：${inAppPurchaseData.cancelledSubKeepDays}"
+                            "已取消\n订阅仍有效"
                         }else{
                             "已过期"
                         }
@@ -128,6 +132,7 @@ class SimpleIapAdapter(var context: Context, var mDataList: ArrayList<Product>?)
         val price = root.itemPrice
         val status = root.itemStatus
         val clickArea = root.clickArea
+        val icon = root.itemIcon
 
     }
 

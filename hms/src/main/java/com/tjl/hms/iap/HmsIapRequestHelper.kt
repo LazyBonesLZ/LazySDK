@@ -338,9 +338,9 @@ object HmsIapRequestHelper {
                 Log.d(TAG, "status is null")
                 return@OnSuccessListener
             }
-            if (product.type == Constants.PRODUCT_TYPE_CONSUMABLE) {
-                product.consumeState = Constants.STATE_UNCONSUMED
-            }
+//            if (product.type == Constants.PRODUCT_TYPE_CONSUMABLE) {
+//                product.consumeState = Constants.STATE_UNCONSUMED
+//            }
             currentProduct = product
             // you should pull up the page to complete the payment process
             startResolutionForResult(activity, status, Constants.REQ_CODE_BUY)
@@ -502,7 +502,7 @@ object HmsIapRequestHelper {
                 hmsIapListener?.onUpdateItemData(product)
                 Toast.makeText(
                     context,
-                    "consumePurchase success",
+                    "消耗成功！",
                     Toast.LENGTH_SHORT
                 ).show()
 
@@ -540,19 +540,27 @@ object HmsIapRequestHelper {
                     when {
                         buyResultInfo.returnCode == OrderStatusCode.ORDER_STATE_CANCEL -> {
                             // 用户取消
+                            Toast.makeText(context,"用户取消",Toast.LENGTH_SHORT).show()
                         }
                         buyResultInfo.returnCode == OrderStatusCode.ORDER_ITEM_ALREADY_OWNED -> {
                             // 已购买过该商品
+                            Toast.makeText(context,"已购买过该商品",Toast.LENGTH_SHORT).show()
                         }
                         buyResultInfo.returnCode == OrderStatusCode.ORDER_STATE_SUCCESS -> {
                             // 支付成功
-                            val inAppPurchaseData = buyResultInfo.inAppPurchaseData
+                            if (currentProduct?.type == Constants.PRODUCT_TYPE_CONSUMABLE) {
+                                currentProduct?.consumeState = Constants.STATE_UNCONSUMED
+                            }
+
+                            Toast.makeText(context,"支付成功",Toast.LENGTH_SHORT).show()
+                            //val inAppPurchaseData = buyResultInfo.inAppPurchaseData
                             currentProduct!!.inAppSignature = buyResultInfo.inAppDataSignature
                             currentProduct!!.inAppPurchaseDataJson = buyResultInfo.inAppPurchaseData
                             hmsIapListener?.onUpdateItemData(currentProduct!!)
                         }
                         else -> {
                             // 其他异常
+                            Toast.makeText(context,"购买异常",Toast.LENGTH_SHORT).show()
                         }
                     }
                     currentProduct = null //恢复标记
